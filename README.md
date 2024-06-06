@@ -26,20 +26,21 @@ The repository contains a batch script file to build the project. Run the follow
 
 ```
 
-The script will create a JAR file named **dao.jar**. Add the file to your project's libraries and it will be ready to use for your web application.
+The script will create a JAR file named **DAOREFLECT.jar**. Add the file to your project's libraries and it will be ready to use for your web application.
 
 **Note:** You need to have a xml context file for your database setup.
 
 ```xml
     <dao>
-        <url>database url</url>
         <driver>database driver class</driver>
+        <url>url</url>
+        <database>database name</database>
         <user>username</user>
         <password>password</password>
-        <engine>database engine type</engine>
+        <bdd>database engine type</bdd>
     </dao>
 ```
-
+add
 ## Example
 
 ```java
