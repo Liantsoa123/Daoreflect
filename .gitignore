@@ -1,5 +1,7 @@
 .vscode
 lib
 bin
-
+*.jar
 .fake
+
+study.md
