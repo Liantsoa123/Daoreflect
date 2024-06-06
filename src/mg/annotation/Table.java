@@ -1,10 +1,10 @@
-package annotation;
+package mg.annotation;
 
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface AnnotationClass {
+public @interface Table {
     String value();
     
 }

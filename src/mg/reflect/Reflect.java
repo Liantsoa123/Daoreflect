@@ -1,10 +1,10 @@
-package reflect;
+package mg.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Vector;
 
-import annotation.AnnotationAttribut;
+import mg.annotation.Column;
 
 public class Reflect {
     public static String getClassName(Object obj) {
@@ -47,9 +47,9 @@ public class Reflect {
     public static String[] getAnnotationAttrName(Object obj) {
         Field[] fields = obj.getClass().getDeclaredFields();
         String[] result = new String[fields.length];
-        AnnotationAttribut annotationAttribut = null;
+        Column annotationAttribut = null;
         for (int i = 0; i < fields.length; i++) {
-            annotationAttribut = fields[i].getAnnotation(AnnotationAttribut.class);
+            annotationAttribut = fields[i].getAnnotation(Column.class);
             if (annotationAttribut != null) {
                 result[i] = annotationAttribut.value();
             }
@@ -61,9 +61,9 @@ public class Reflect {
     public static String[] getFieldName(Object obj) {
         Field[] fields = obj.getClass().getDeclaredFields();
         String[] result = new String[fields.length];
-        AnnotationAttribut annotationAttribut = null;
+        Column annotationAttribut = null;
         for (int i = 0; i < fields.length; i++) {
-            annotationAttribut = fields[i].getAnnotation(AnnotationAttribut.class);
+            annotationAttribut = fields[i].getAnnotation(Column.class);
             if (annotationAttribut != null) {
                 result[i] = fields[i].getName();
             }

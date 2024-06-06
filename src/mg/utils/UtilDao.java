@@ -1,4 +1,4 @@
-package utils;
+package mg.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import annotation.AnnotationClass;
-import reflect.Reflect;
+import mg.annotation.Table;
+import mg.reflect.Reflect;
 
 public class UtilDao {
     public static String findAllQuery(Object obj, boolean withCriteria) throws Exception {
-        AnnotationClass annotationClass = obj.getClass().getAnnotation(AnnotationClass.class);
+        Table annotationClass = obj.getClass().getAnnotation(Table.class);
 
         if (annotationClass == null) {
             throw new Exception("annotation class not found ");
@@ -36,7 +36,7 @@ public class UtilDao {
     }
 
     public static String insertQuery(Object obj) throws Exception {
-        AnnotationClass annotationClass = obj.getClass().getAnnotation(AnnotationClass.class);
+        Table annotationClass = obj.getClass().getAnnotation(Table.class);
 
         if (annotationClass == null) {
             throw new Exception("annotation class not found ");

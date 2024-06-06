@@ -1,10 +1,12 @@
-package dao;
+package mg.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
-import utils.UtilDao;
-import utils.UtilDb;
+import mg.utils.UtilDao;
+import mg.utils.UtilDb;
+import mg.utils.XMLHandler;
+import java.util.HashMap;
 
 public class DaoReflect {
     UtilDb utilDb;
@@ -15,6 +17,18 @@ public class DaoReflect {
 
     public void setUtilDb(UtilDb utilDb) {
         this.utilDb = utilDb;
+    }
+
+    public DaoReflect(String xmlPath) throws Exception {
+        HashMap<String, String> xml = XMLHandler.getRootValues(xmlPath);
+        UtilDb utilDb = new UtilDb();
+        utilDb.setDriver(xml.get("driver"));
+        utilDb.setUrl(xml.get("url"));
+        utilDb.setDatabase(xml.get("database"));
+        utilDb.setUser(xml.get("user"));
+        utilDb.setMdp(xml.get("password"));
+        utilDb.setBdd(xml.get("bdd"));
+        this.setUtilDb(utilDb);
     }
 
     public void save(Object obj, Connection c) throws Exception {

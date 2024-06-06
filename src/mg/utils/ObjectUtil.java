@@ -1,4 +1,4 @@
-package utils;
+package mg.utils;
 
 public class ObjectUtil {
     public static boolean isDefault(Object obj) {
