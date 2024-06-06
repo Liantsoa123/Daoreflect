@@ -45,30 +45,32 @@ add
 
 ```java
     // Here is the class used on our test
-    @Table("brand")
-    public class Employee {
+    @Table("user")
+    public class User {
         @Column("id")
         String id;
+        @Column("name")
+        String name ;
     }
 ```
 
 ```java
-    Dao dao = new Dao("path\\to\\xml-file.xml");
-    ArrayList<Object> employees = dao.readAll(new Employee());
-    for (Object object : Empployee) {
-        Employee driver = ((Driver)object);
+    DaoReflect daoReflect = new DaoReflect("path\\to\\xml-file.xml");
+    ArrayList<Object> users = daoReflect.findAll(new User() , false);
+    for (Object object : users) {
+        User user = ((User)object);
 
-        System.out.println(employee.getId());
+        System.out.println(User.getName());
     }
 ```
 
 ## Feature
 
-* ReadAll
-* ReadByCriteria
-* Create
-* ReadByRange
-* ReadByPagination
+* Save
+* FindAll ( Class , False without criteria )
+* FindAll ( Class , Ture with criteria )
+* FindBetween
+* pagin
 
 ## Contributing
 
@@ -84,4 +86,4 @@ This project is licensed under the MIT License. This license grants you permissi
 
 ## Contact
 
-You can reach me at: [sandratrarafa@gmail.com](mailto:sandratrarafa@gmai.com)
+You can reach me at: [rakotonanaharyLiantsoaFan@gmail.com](mailto:rakotonanaharyLiantsoaFan@gmai.com)
