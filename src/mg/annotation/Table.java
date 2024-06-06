@@ -1,4 +1,4 @@
-package annotation;
+package mg.annotation;
 
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;

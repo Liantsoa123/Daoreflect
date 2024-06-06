@@ -1,10 +1,10 @@
-package reflect;
+package mg.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Vector;
 
-import annotation.Column;
+import mg.annotation.Column;
 
 public class Reflect {
     public static String getClassName(Object obj) {

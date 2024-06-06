@@ -1,4 +1,4 @@
-package utils;
+package mg.utils;
 
 public class StringUtil {
     public static String toUppurcaseFirstLetter(String str) {

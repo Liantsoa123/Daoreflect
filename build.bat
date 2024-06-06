@@ -30,6 +30,7 @@ move "%jar_name%" "../"
 
 ::delete temp   
 rd /S /Q "%temp_dir%"
+rd /S /Q "%bin_dir%"
 
 echo %test_dir%
 endlocal

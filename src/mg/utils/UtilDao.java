@@ -1,4 +1,4 @@
-package utils;
+package mg.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import annotation.Table;
-import reflect.Reflect;
+import mg.annotation.Table;
+import mg.reflect.Reflect;
 
 public class UtilDao {
     public static String findAllQuery(Object obj, boolean withCriteria) throws Exception {
