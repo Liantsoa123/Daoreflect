@@ -15,7 +15,7 @@ public class Main {
 }
 
 /*
-    Dao.xml exemple for oracle
+ * Dao.xml exemple for oracle
  * <dao>
  * <url>jdbc:oracle:thin:@localhost:1521:orcl</url>
  * <database>GestionAnalytique</database>
@@ -23,4 +23,16 @@ public class Main {
  * <password>liantsoa</password>
  * <bdd>oracle</bdd>
  * </dao>
+ * 
+ * Dao.xml exemple for postgresql
+ * <dao>
+ * <url>jdbc:postgresql://localhost:5432</url>
+ * <database>GestionAnalytique</database>
+ * <user>postgres</user>
+ * <password>liantsoa</password>
+ * <bdd>postgresql</bdd>
+ * </dao>
+ * 
+ * N.B : types BDD : oracle , mysql , postgresql
+ * 
  */
