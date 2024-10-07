@@ -22,7 +22,6 @@ public class DaoReflect {
     public DaoReflect(String xmlPath) throws Exception {
         HashMap<String, String> xml = XMLHandler.getRootValues(xmlPath);
         UtilDb utilDb = new UtilDb();
-        utilDb.setDriver(xml.get("driver"));
         utilDb.setUrl(xml.get("url"));
         utilDb.setDatabase(xml.get("database"));
         utilDb.setUser(xml.get("user"));

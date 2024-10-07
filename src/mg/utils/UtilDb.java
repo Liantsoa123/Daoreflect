@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class UtilDb {
-    String driver, url, database, user, mdp, bdd;
+    String url, database, user, mdp, bdd;
 
     public UtilDb() {
     }
 
-    public UtilDb(String driver, String url, String database, String user, String mdp, String bdd) {
-        this.setDriver(driver);
+    public UtilDb(String url, String database, String user, String mdp, String bdd) {
+
         this.setUrl(url);
         this.setDatabase(database);
         this.setUser(user);
@@ -50,14 +50,6 @@ public class UtilDb {
         this.url = url;
     }
 
-    public String getDriver() {
-        return driver;
-    }
-
-    public void setDriver(String driver) {
-        this.driver = driver;
-    }
-
     public String getBdd() {
         return bdd;
     }
@@ -69,15 +61,21 @@ public class UtilDb {
     public Connection getCon() {
         Connection con = null;
         try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url + ":" + database, user, mdp);
-
+            System.out.println("Database:" + this.getBdd());
+            if ("Oracle".equalsIgnoreCase(this.getBdd())) {
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+                con = DriverManager.getConnection(url, user, mdp);
+            } else if ("PostgreSql".equalsIgnoreCase(this.getBdd())) {
+                Class.forName("org.postgresql.Driver");
+                con = DriverManager.getConnection(url + "/" + database, user, mdp);
+            } else if ("Mysql".equalsIgnoreCase(this.getBdd())) {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection(url + "/" + database, user, mdp);
+            }
+            System.out.println("Connection to " + this.getBdd() + " database established successfully!");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return con;
     }
-
-    
-
 }

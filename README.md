@@ -32,15 +32,16 @@ The script will create a JAR file named **DAOREFLECT.jar**. Add the file to your
 
 ```xml
     <dao>
-        <driver>database driver class</driver>
         <url>url</url>
         <database>database name</database>
         <user>username</user>
         <password>password</password>
-        <bdd>database engine type</bdd>
+        <bdd>oracle or postgresql or mysql</bdd>
     </dao>
 ```
-add
+
+**N.B** If the  bdd is oracle don't make the database empty but make something
+
 ## Example
 
 ```java
@@ -68,7 +69,7 @@ add
 
 * Save
 * FindAll ( Class , False without criteria )
-* FindAll ( Class , Ture with criteria )
+* FindAll ( Class , True with criteria )
 * FindBetween
 * pagin
 
